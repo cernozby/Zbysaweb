@@ -1,0 +1,47 @@
+{block content}
+<div class="container pt-5">
+  <div class="d-flex justify-content-end">
+  <a n:href="Homepage:newCustomer" class="btn bg-primary text-white"><i class="fa fa-plus"></i> Nový odběratel</a>
+  </div>
+<div class="pt-2">
+<table class="table border">
+  <thead>
+    <tr>
+      <th>jméno</th>
+      <th>ulice</th>
+      <th>číslo domu</th>
+      <th>město</th>
+      <th>firma</th>
+      <th>IČO</th>
+      <th>DIČO</th>
+      <th>PSČ</th>
+      <th>editovat</th>
+    </tr>
+  </thead>
+  <tbody>
+    {foreach $table as $item}
+    <tr>
+      {foreach $item as $value}
+        {if !$iterator->isFirst()}
+        <td> {$value}</td>
+        {/if}
+      {/foreach}
+      <td>
+        <a n:href="Homepage:newCustomer 'id' => $item->id_customer" title="upravit" class="btn">
+          <i class="fas fa-pencil fa"></i>
+        </a>
+        <a n:href="deleteItem! type=>'customerModel', id => $item->id_customer " title="smazat" class="btn">
+          <i class="fa fa-trash fa"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+  {/foreach}
+</table>
+</div>
+</div>
+
+
+
+
+

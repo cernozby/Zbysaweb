@@ -1,0 +1,39 @@
+{block content}
+
+<div class="container pt-5">
+  <div class="text-left bg-primary mt-2 text-white rounded">
+    <h3 class="text-center pt-4 pb-2 border-bottom"> Generátor faktury </h3>
+    {form factureForm class => "p-3"}
+      {input id_facture}
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        {label factureName}
+        {input factureName class => "form-control"}
+      </div>
+      <div class="form-group col-md-2">
+        {label customer_id}
+        {input customer_id class => "form-control"}
+      </div>
+      <div class="form-group col-md-2">
+      {label initDate}
+      {input initDate class => "form-control"}
+      </div>
+      <div class="form-group col-md-2">
+        {label value}
+        {input value class => "form-control"}
+      </div>
+      <div class="form-group col-md-2">
+        {label factureNumber}
+        {input factureNumber class => "form-control"}
+      </div>
+    </div>
+    <div class="form-group">
+      {label text}
+      {input text class => "form-control"}
+    </div>
+    <div class="form-row">
+      {input send class => "btn btn-light col-md-3 "}
+    </div>
+    {/form}
+  </div>
+</div>

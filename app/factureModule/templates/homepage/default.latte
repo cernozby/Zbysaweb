@@ -1,0 +1,103 @@
+{block content}
+<div class="container pt-5">
+    <div class="d-flex justify-content-between">
+        <div class="form-inline">
+            <label for="sel1">Filtr:&nbsp; &nbsp;</label>
+            <select class="form-control" id="filtrFacture">
+                <option value="all">vše</option>
+                <option value="pay">zaplacené</option>
+                <option value="unpay">nezaplacené</option>
+                <option value="unsend">neodeslané</option>
+            </select>
+        </div>
+        <a n:href="Homepage:generatePdf" class="btn bg-primary text-white"><i class="fa fa-plus"></i> Nová faktura</a>
+    </div>
+    <div class="pt-2">
+        {snippet }
+        <table class="table border table-text-center ">
+            <thead>
+            <tr class="bg-primary text-light">
+                <th>Faktura</th>
+                <th>Datum vystavení</th>
+                <th>Datum Splatnosti</th>
+                <th>stav</th>
+                <th>Akce</th>
+            </tr>
+            </thead>
+            <tbody>
+                {foreach $table as $item}
+                    {var $color = ""}
+                    {if $item->state == 'pay'}
+                        {var $color = 'bg-success'}
+                    {elseif $item->state !== 'created' && (new DateTime() > Nette\Utils\DateTime::from(str_replace('. ', '-', $item->limitDate)))}
+                        {var $color = 'bg-danger'}
+                    {elseif $item->state == 'download'}
+                        {var $color = 'bg-light-yellow'}
+                    {/if}
+                    <tr class="{$color}">
+                        <td>
+                            <a target="_blank"
+                               class="btn btn-primary" n:href="generatePdf! id => $item->id_facture, type => 'view' ">{$item->factureName} </a>
+                        </td>
+                        <td>
+                            {$item->initDate}
+                        </td>
+                        <td>
+                            {$item->limitDate}
+                        </td>
+                        <td>
+                            {\Constants::STATES[$item->state]}
+                        </td>
+                        <td class="text-right">
+                            <a class="btn btn-primary" n:href="generatePdf! id => $item->id_facture, type => 'downland' ">
+                                <i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;stáhnout
+                            </a>
+                            {if $item->state != 'created' }
+                            <button class="btn btn-primary" id="pay" onclick="pay(this)" data-id = "{$item->id_facture}" data-type = "{$item->state}">
+                              &nbsp;&nbsp;{if $item->state !== 'pay'}<i class="fa fa-check"></i>&nbsp;&nbsp;zaplatit
+                                {else}<i class="fa fa-close"></i>&nbsp;&nbsp;zrušit {/if}
+                            </button>
+                            {/if}
+                            <a n:href="Homepage:generatePdf 'id' => $item->id_facture" title="upravit" class="btn btn-primary confirmation">
+                                <i class="fas fa-pencil fa"></i>&nbsp;&nbsp;upravit
+                            </a>
+                            <a n:href="deleteItem! type=>'factureModel', id => $item->id_facture " title="smazat" class="btn btn-primary confirmation" ">
+                                <i class="fa fa-trash fa"></i>&nbsp;&nbsp;smazat
+                            </a>
+                        </td>
+                    </tr>
+                {/foreach}
+            </tbody>
+        </table>
+        {/snippet}
+    </div>
+</div>
+
+<script>
+    function pay (element) {
+       naja.makeRequest('POST', {link FacturePay!}, { id : element.dataset.id, type : element.dataset.type, value: document.getElementById('filtrFacture').value});
+    }
+
+    document.getElementById('filtrFacture').addEventListener("change", function () {
+        naja.makeRequest('POST', {link chooseSome!}, { value : this.value});
+    });
+
+
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('opravdu')) {
+            e.preventDefault();
+        }
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+
+</script>
+
+
+
+
+
+
+

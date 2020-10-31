@@ -1,0 +1,54 @@
+{block content}
+
+<div class="container pt-5">
+  <div class="d-flex justify-content-end">
+    <a n:href="Homepage:customer" class="btn bg-primary text-white"><i class="fa fa-arrow-left"></i> Všichni odběratelé</a>
+  </div>
+ <div class="text-left bg-primary mt-2 text-white rounded">
+  <h3 class="text-center pt-4 pb-2 border-bottom"> Nový odběratel </h3>
+  {form customerForm class => "p-3"}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      {label name}
+      {input name class => "form-control"}
+    </div>
+    <div class="form-group col-md-6">
+    {label firma}
+    {input firma class => "form-control"}
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-3">
+    {label city}
+    {input city class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label cityPostCode}
+    {input cityPostCode class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label street}
+    {input street class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label houseNumber}
+    {input houseNumber class => "form-control"}
+  </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      {label ico}
+      {input ico class => "form-control"}
+    </div>
+    <div class="form-group col-md-6">
+      {label dico}
+      {input dico class => "form-control"}
+    </div>
+  </div
+  <div class="form-row">
+    {input send class => "btn btn-light col-md-3 "}
+  </div>
+    {input id_customer}
+  {/form}
+</div>
+</div>

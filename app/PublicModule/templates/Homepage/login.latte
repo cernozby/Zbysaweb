@@ -1,0 +1,37 @@
+{block content}
+{form loginForm}
+
+    <div class="d-flex justify-content-center form">
+      <div class="col-md-4">
+        <div class="card bg-gray-light">
+          <div class="card-header bg-primary"><span class="panel-title text-light">Přihlášení do systému BOZALA</span></div>
+          <div class="card-body">
+
+            <div class="input-container">
+              <i class="fa fa-user icon"></i>
+              {input email }
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-envelope icon"></i>
+              {input passwd }
+            </div>
+
+
+            {input login class=>"btn btn-primary btn-block"}
+          </div>
+        </div>
+      </div>
+    </div>
+  <br>
+  <div class="container">
+    <div class="row justify-content-center">
+{*
+    <p>pokud jste zapoměli heslo, klidkněte <a n:href=":public:Homepage:forgetPasswd">zde.</a></p>
+*}
+    </div>
+  </div>
+{/form}
+
+
+

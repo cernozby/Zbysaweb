@@ -1,0 +1,75 @@
+{block content}
+
+<div class="container text-left mt-5 bg-primary text-white rounded">
+  <h3 class="text-center pt-4 pb-2 border-bottom"> Moje údaje </h3>
+  {form supplierForm class => "p-3"}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      {label firstName}
+      {input firstName class => "form-control"}
+    </div>
+    <div class="form-group col-md-6">
+    {label lastName}
+    {input lastName class => "form-control"}
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-3">
+    {label city}
+    {input city class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label cityPostCode}
+    {input cityPostCode class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label street}
+    {input street class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label houseNumber}
+    {input houseNumber class => "form-control"}
+  </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-3">
+    {label bank}
+    {input bank class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label swift}
+    {input swift class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label iban}
+    {input iban class => "form-control"}
+  </div>
+  <div class="form-group col-md-3">
+    {label bankNumber}
+    {input bankNumber class => "form-control"}
+  </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      {label ico}
+      {input ico class => "form-control"}
+    </div>
+    <div class="form-group col-md-3">
+      {label tel}
+      {input tel class => "form-control"}
+    </div>
+    <div class="form-group col-md-3">
+      {label dueDays}
+      {input dueDays class => "form-control"}
+    </div>
+    <div class="form-group col-md-3">
+      {label nextFactureNumber}
+      {input nextFactureNumber class => "form-control"}
+    </div>
+  </div
+  <div class="form-row">
+    {input send class => "btn btn-light col-md-3 "}
+  </div>
+  {/form}
+</div>
+

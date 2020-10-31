@@ -1,0 +1,118 @@
+
+
+.header, .content, .footer, .bank, .text {
+    table-layout: fixed;
+    width: 700px;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.content {
+    border: 1px solid black;
+    height: 200px;
+}
+
+.bank {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+}
+
+.text {
+    border: 1px solid black;
+}
+
+.footer {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+
+}
+
+th, td {
+    width: 175px !important;
+    overflow: hidden;
+    padding-left: 5px;
+    font: Georgia 14px black;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.header tr td {
+    padding-top: 10px;
+}
+
+.content .tr-one td {
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.content .tr-three td {
+    padding-bottom: 50px;
+}
+
+.content .tr-five td {
+    padding-bottom: 20px;
+}
+
+.content .tr-six td {
+    padding-bottom: 40px;
+}
+
+.content .one {
+    width: 150px;
+}
+
+.content .two {
+    width: 200px;
+}
+
+.bank .tr-five td {
+    padding-bottom: 50px;
+}
+
+.text .textarea {
+    height: 300px;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.footer .tr-one td{
+    padding-top: 40px;
+}
+
+.footer .tr-two td {
+    padding-bottom: 20px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+.border-no-right {
+    border: 1px solid black;
+}
+.border-no-left {
+    border: 1px solid black;
+}
+
+.border-right {
+    border-right: 1px solid black;
+}
+
+.border-left {
+    border-left: 1px solid black;
+}
+
+.border-top {
+    border-top: 1px solid black;
+}
+
+.border-bottom {
+    border-bottom: 1px solid black;
+}
+
+

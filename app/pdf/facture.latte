@@ -1,0 +1,113 @@
+<table class="header">
+  <tr>
+    <td class="border-left border-top" style=" width: 200px">
+      <b>FAKTURA - DOKLAD Č.</b>
+    </td>
+    <td class="border-top border-right" style="width: 150px; text-align: right">
+      {var $number = $factureNumber}
+
+      <b>{date('Y')}-{for $i=0; $i < 4-strlen($number); $i++}0{/for}{$number}</b>
+    </td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+<table class="content">
+  <tr class="tr-one">
+    <td class="one">
+      <b>Dodavatel:</b>
+    </td>
+    <td class="border-right two">
+      {$supplier_firstName}&nbsp;{$supplier_lastName}
+    </td>
+    <td class="one">
+      <b>Odběratel:</b>
+    </td>
+    <td class="two">
+      {$customer_firma}
+    </td>
+  </tr>
+  <tr class="tr-two">
+    <td class="one"> Adresa:</td>
+    <td class="border-right two"> {$supplier_street}&nbsp;{$supplier_houseNumber}</td>
+    <td class="one">Adresa:</td>
+    <td class="two">{$customer_street}&nbsp;{$customer_houseNumber}</td>
+  </tr>
+  <tr class="tr-three">
+    <td class="one"></td>
+    <td class="border-right two">{$supplier_city}</td>
+    <td class="one"></td>
+    <td class="two">{$customer_city}</td>
+  </tr>
+  <tr class="tr-four">
+    <td class="one">IČO:</td>
+    <td class="border-right two">{$supplier_ico}</td>
+    <td class="one">IČO:</td>
+    <td class="two">{$customer_ico}</td>
+  </tr>
+  <tr class="tr-five">
+    <td colspan="2" class="border-right">Neplátce DPH</td>
+    <td class="one">DIČ</td>
+    <td class="two">{$customer_dico}</td>
+  </tr>
+  <tr class="tr-six">
+    <td colspan="2" class="border-right">Podnikatel je zapsán do živnostenského rejstříku</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+<table class="bank" >
+  <tr>
+    <td>Banka:</td>
+    <td class="border-left border-bottom border-right">{$supplier_bank}</td>
+    <td>Forma úhrady:</td>
+    <td class="border-left border-bottom border-right">převodem</td>
+  </tr>
+  <tr>
+    <td>SWIFT:</td>
+    <td class="border-left border-bottom border-right">{if $supplier_swift}{$swift}{else}-{/if}</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IBAN:</td>
+    <td class="border-left border-bottom border-right">{if $supplier_iban}{$iban}{else}-{/if}</td>
+    <td>Datum vystavení:</td>
+    <td class="border-left border-bottom border-right border-top">{$initDate}</td>
+  </tr>
+  <tr>
+    <td>Číslo účtu:</td>
+    <td class="border-left border-bottom border-right">{$supplier_bankNumber}</td>
+    <td>Datum splatnosti:</td>
+    <td class="border-left border-bottom border-right">{$limitDate}</td>
+  </tr>
+  <tr class="tr-five">
+    <td colspan="2" class="border-right"></td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+
+<table class="text">
+  <tr>
+    <td colspan="4" class="textarea">{$text}</td>
+  </tr>
+  <tr>
+    <td>
+      CELKEM K ÚHRADĚ:
+    </td>
+    <td></td>
+    <td></td>
+    <td class="border-left border-top text-right">{$value},- Kć</td>
+  </tr>
+</table>
+<table class="footer">
+  <tr class="tr-one">
+    <td>Vystavil:</td>
+    <td>{$supplier_firstName}&nbsp;{$supplier_lastName}</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr class="tr-two">
+    <td>Telefon:</td>
+    <td>{$supplier_tel}</td>
+    <td colspan="2"></td>
+  </tr>
+</table>

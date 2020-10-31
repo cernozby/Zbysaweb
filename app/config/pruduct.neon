@@ -1,0 +1,9 @@
+parameters:
+
+
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=zbysaweb'
+	user: 'bozala.cz'
+	password: 'xolBv44po'
+	options:
+	    lazy: yes
