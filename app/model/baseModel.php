@@ -1,6 +1,5 @@
 <?php
 
-
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
 
 /**
@@ -145,6 +144,14 @@ class baseModel {
 
   public function getInputDatetime($timestamp) {
     return date("Y-m-d\T:H:i", $timestamp);
-
   }
+  
+  public function arrayToObj(array $array) : array {
+    $result = array();
+    
+    foreach ($array as $a) {
+      $result[] = $a->getId();
+    }
+  }
+  
 }

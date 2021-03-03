@@ -121,18 +121,18 @@
 
 
   $("#first").vegas({
-      delay: 20000,
+      delay: 5000,
       timer: false,
       firstTransition: 'fade',
       transition: 'fade',
       transitionDuration: '1000',
-      animationDuration: '10000',
+      animationDuration: '1000',
       cover: 'repeat',
 
       slides: [
-          { src: "/img/climber2.jpg" },
-          { src: "/img/climber1.jpg"},
-          { src: "/img/climber3.jpg"},
+          { src: "/img/climber2.jpg", align: "left", valign: "40%"},
+          { src: "/img/climber1.jpg", align: "0%", valign: "20%"},
+          { src: "/img/climber3.jpg", align: "0%", valign: "20%"},
           { src: "/img/climber4.jpg"}
       ],
       animation: 'kenburnsLeft'

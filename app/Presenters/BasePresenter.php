@@ -10,6 +10,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter {
   public $customerModel;
   public $pdfModel;
   public $factureModel;
+  public $articleModel;
 
   public function startup() {
 

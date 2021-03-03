@@ -12,8 +12,7 @@ final class RouterFactory
 {
 	use Nette\StaticClass;
 
-	public static function createRouter(): RouteList
-	{
+	public static function createRouter(): RouteList {
 	  $router = new RouteList;
 
     $router->withModule('public')
